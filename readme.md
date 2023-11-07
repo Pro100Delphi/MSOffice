@@ -1,7 +1,7 @@
 # MS-Excel
 
 <details>
-<summary> First Steps </summary>
+<summary> Initialize Excel </summary>
 
 ```delphi
 
@@ -20,6 +20,9 @@ const
   
  var ExApp: Variant;
 	 WB, WS: Variant;
+	 
+	 Rows: Integer;
+	 Cols: Integer; 	 
  begin
  
 	// CoInitialize(nil); // to activate COM
@@ -27,7 +30,7 @@ const
 	ExApp := CreateOleObject('Excel.Application');
 	ExApp.Visible := True;
 
-	WB := ExApp.Workbooks.Open(ExtractFilePath(ParamStr(0)) + 'Mappe1.xlsx');
+	WB := ExApp.Workbooks.Open(ExtractFilePath(ParamStr(0)) + 'Excel-File.xlsx');
 	WS := WB.WorkSheets[SheetNum];
 	WS.Activate;
 
@@ -38,13 +41,14 @@ const
 	Cols := ExApp.ActiveCell.Column;
 
 	WB.Close;
-	EX.Quit;
-	EX := Unassigned;
+	
 	WB := Unassigned;
-	WS := Unassigned;
+	WS := Unassigned;	
 	
+	ExApp.Quit;
+	ExApp := Unassigned;
 	
-	// CoUninitialize; // deactivate
+	// CoUninitialize; // deactivate COM
  
  end;
 	
