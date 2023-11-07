@@ -52,6 +52,7 @@ const
 
 <details>
 <summary> Used Range </summary>
+
 ```delphi
 	WS.Activate;
 
