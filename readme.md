@@ -18,7 +18,7 @@ uses
 const
 	xlCellTypeLastCell = $0000000B;
   
-var ExApp: Variant;
+var	ExApp: Variant;
 	WB, WS: Variant;
 	 
  begin
