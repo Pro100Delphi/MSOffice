@@ -18,11 +18,9 @@ uses
 const
 	xlCellTypeLastCell = $0000000B;
   
- var ExApp: Variant;
+var ExApp: Variant;
 	WB, WS: Variant;
 	 
-	Rows: Integer;
-	Cols: Integer; 	 
  begin
  
 	// CoInitialize(nil); // to activate COM
@@ -32,6 +30,8 @@ const
 
 	WB := ExApp.Workbooks.Open(ExtractFilePath(ParamStr(0)) + 'Excel-File.xlsx');
 	WS := WB.WorkSheets[SheetNum];
+	
+	...
 	
 	...
 
