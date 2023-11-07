@@ -19,10 +19,10 @@ const
 	xlCellTypeLastCell = $0000000B;
   
  var ExApp: Variant;
-	 WB, WS: Variant;
+	WB, WS: Variant;
 	 
-	 Rows: Integer;
-	 Cols: Integer; 	 
+	Rows: Integer;
+	Cols: Integer; 	 
  begin
  
 	// CoInitialize(nil); // to activate COM
@@ -32,13 +32,8 @@ const
 
 	WB := ExApp.Workbooks.Open(ExtractFilePath(ParamStr(0)) + 'Excel-File.xlsx');
 	WS := WB.WorkSheets[SheetNum];
-	WS.Activate;
-
-	WS.Cells.SpecialCells(xlCellTypeLastCell).Activate;
-
-	// Used Range
-	Rows := ExApp.ActiveCell.Row;
-	Cols := ExApp.ActiveCell.Column;
+	
+	...
 
 	WB.Close;
 	
@@ -56,8 +51,21 @@ const
 </details>
 
 <details>
-<summary> Cell </summary>
+<summary> Used Range </summary>
+```delphi
+	WS.Activate;
 
+	WS.Cells.SpecialCells(xlCellTypeLastCell).Activate;
+
+	// Used Range
+	Rows := ExApp.ActiveCell.Row;
+	Cols := ExApp.ActiveCell.Column;
+
+```
+</details>
+
+<details>
+<summary> Cells </summary>
 ```delphi
 	// Write into Cell
 	WS.Cells[RowNum, ColNum] := AnyVariantValue;
