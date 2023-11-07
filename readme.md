@@ -54,3 +54,16 @@ const
 	
 ```
 </details>
+
+<details>
+<summary> Cell </summary>
+
+```delphi
+	// Write into Cell
+	WS.Cells[RowNum, ColNum] := AnyVariantValue;
+	
+	// Read from Cell
+	AnyVariantValue := WS.Cells[RowNum, ColNum];
+```
+</details>
+
