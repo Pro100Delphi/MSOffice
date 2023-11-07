@@ -3,7 +3,7 @@
 <details>
 <summary> Initialize Excel </summary>
 
-```pascal
+```delphi
 
 uses
 	...
