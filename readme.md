@@ -68,6 +68,7 @@ var
 
 <details>
 <summary> Cells </summary>
+
 ```delphi
 	// Write into Cell
 	WS.Cells[RowNum, ColNum] := AnyVariantValue;
